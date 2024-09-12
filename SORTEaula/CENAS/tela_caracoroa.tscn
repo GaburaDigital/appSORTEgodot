@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://crljgtuht45ls"]
+
+[ext_resource type="Texture2D" uid="uid://vvu7016btt4f" path="res://artes sorte/moeda00.png" id="1_75bqr"]
+[ext_resource type="Script" path="res://SCRIPTS/tela_caracoroa.gd" id="1_g8yfm"]
+[ext_resource type="PackedScene" uid="uid://c7xlwwjog13jf" path="res://CENAS/button_casa.tscn" id="2_ll6cl"]
+[ext_resource type="PackedScene" uid="uid://baq0dr8wiuwhu" path="res://CENAS/progress_bar.tscn" id="4_jgirj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_f7lei"]
+font_size = 34
+font_color = Color(0, 0, 0, 1)
+
+[node name="TELA_CARACOROA" type="Node2D"]
+script = ExtResource("1_g8yfm")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -10.0
+offset_top = 1.0
+offset_right = 818.0
+offset_bottom = 613.0
+color = Color(0.934506, 0.948589, 0.524884, 1)
+
+[node name="Moeda00" type="Sprite2D" parent="."]
+position = Vector2(398, 141)
+scale = Vector2(0.761719, 0.746094)
+texture = ExtResource("1_75bqr")
+
+[node name="Button_CASA" parent="." instance=ExtResource("2_ll6cl")]
+offset_left = 675.0
+offset_top = 8.0
+offset_right = 792.0
+offset_bottom = 123.0
+
+[node name="Button_JOGAR" type="Button" parent="."]
+offset_left = 302.0
+offset_top = 258.0
+offset_right = 497.0
+offset_bottom = 313.0
+text = "JOGAR"
+
+[node name="ProgressBar" parent="." instance=ExtResource("4_jgirj")]
+
+[node name="Label_resultado" type="Label" parent="."]
+offset_left = 299.0
+offset_top = 471.0
+offset_right = 504.0
+offset_bottom = 551.0
+text = "--resultado--"
+label_settings = SubResource("LabelSettings_f7lei")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button_JOGAR" to="." method="_on_button_jogar_pressed"]

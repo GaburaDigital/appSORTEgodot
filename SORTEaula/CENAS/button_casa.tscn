@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7xlwwjog13jf"]
+
+[ext_resource type="Texture2D" uid="uid://cj3pvvnbdxmkv" path="res://artes sorte/home00.png" id="1_su8jk"]
+[ext_resource type="Script" path="res://SCRIPTS/button_casa.gd" id="2_6k3gn"]
+
+[node name="Button_CASA" type="Button"]
+offset_right = 117.0
+offset_bottom = 115.0
+icon = ExtResource("1_su8jk")
+expand_icon = true
+script = ExtResource("2_6k3gn")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,0 +1,70 @@
+[gd_scene load_steps=13 format=3 uid="uid://dwjr5q3fndnou"]
+
+[ext_resource type="Texture2D" uid="uid://dmt4r8m5p562f" path="res://artes sorte/TREVO.png" id="1_1ryrf"]
+[ext_resource type="Script" path="res://SCRIPTS/tela_home.gd" id="1_jedgd"]
+[ext_resource type="Texture2D" uid="uid://vvu7016btt4f" path="res://artes sorte/moeda00.png" id="2_abaf1"]
+[ext_resource type="Texture2D" uid="uid://daso7csewxtus" path="res://artes sorte/moeda02.png" id="3_bcf20"]
+[ext_resource type="Texture2D" uid="uid://qdwg363bje0i" path="res://artes sorte/moeda01.png" id="4_tda71"]
+[ext_resource type="Texture2D" uid="uid://bmp8wkgdw2crj" path="res://artes sorte/jokenpo00.png" id="5_f6nuh"]
+[ext_resource type="Texture2D" uid="uid://3hwo8505k8uu" path="res://artes sorte/jokenpo02.png" id="6_1jvrk"]
+[ext_resource type="Texture2D" uid="uid://dumcgp2df2sua" path="res://artes sorte/jokenpo01.png" id="7_kiy5u"]
+[ext_resource type="Texture2D" uid="uid://mbmp0b5xqkxs" path="res://artes sorte/dado00.png" id="8_6rqw5"]
+[ext_resource type="Texture2D" uid="uid://ddaqjxijy2tpm" path="res://artes sorte/dado02.png" id="9_ea6nu"]
+[ext_resource type="Texture2D" uid="uid://dsotbj6yvt156" path="res://artes sorte/dado01.png" id="10_p5npe"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gdiwi"]
+font_size = 70
+font_color = Color(0, 0, 0, 1)
+
+[node name="TELA_home" type="Node2D"]
+script = ExtResource("1_jedgd")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -14.0
+offset_top = -10.0
+offset_right = 817.0
+offset_bottom = 609.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 52.0
+offset_top = 44.0
+offset_right = 759.0
+offset_bottom = 193.0
+text = "Aplicativo da SORTE"
+label_settings = SubResource("LabelSettings_gdiwi")
+
+[node name="Trevo" type="Sprite2D" parent="."]
+position = Vector2(111.5, 186.5)
+scale = Vector2(0.613281, 0.613281)
+texture = ExtResource("1_1ryrf")
+
+[node name="TextureButton_moeda" type="TextureButton" parent="."]
+offset_left = 8.0
+offset_top = 338.0
+offset_right = 264.0
+offset_bottom = 594.0
+texture_normal = ExtResource("2_abaf1")
+texture_pressed = ExtResource("3_bcf20")
+texture_hover = ExtResource("4_tda71")
+
+[node name="TextureButton_jokenpo" type="TextureButton" parent="."]
+offset_left = 269.0
+offset_top = 335.0
+offset_right = 525.0
+offset_bottom = 591.0
+texture_normal = ExtResource("5_f6nuh")
+texture_pressed = ExtResource("6_1jvrk")
+texture_hover = ExtResource("7_kiy5u")
+
+[node name="TextureButton_dado" type="TextureButton" parent="."]
+offset_left = 541.0
+offset_top = 339.0
+offset_right = 797.0
+offset_bottom = 595.0
+texture_normal = ExtResource("8_6rqw5")
+texture_pressed = ExtResource("9_ea6nu")
+texture_hover = ExtResource("10_p5npe")
+
+[connection signal="pressed" from="TextureButton_moeda" to="." method="_on_texture_button_moeda_pressed"]
+[connection signal="pressed" from="TextureButton_jokenpo" to="." method="_on_texture_button_jokenpo_pressed"]
+[connection signal="pressed" from="TextureButton_dado" to="." method="_on_texture_button_dado_pressed"]

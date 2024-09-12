@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=3 uid="uid://cu5cotdxs2sqx"]
+
+[ext_resource type="Texture2D" uid="uid://mbmp0b5xqkxs" path="res://artes sorte/dado00.png" id="1_d83p5"]
+[ext_resource type="Script" path="res://SCRIPTS/tela_dado.gd" id="1_pa65t"]
+[ext_resource type="PackedScene" uid="uid://c7xlwwjog13jf" path="res://CENAS/button_casa.tscn" id="2_400u2"]
+[ext_resource type="PackedScene" uid="uid://baq0dr8wiuwhu" path="res://CENAS/progress_bar.tscn" id="3_xy5ap"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pgoej"]
+font_size = 80
+font_color = Color(0, 0, 0, 1)
+
+[node name="tela_dado" type="Node2D"]
+script = ExtResource("1_pa65t")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 810.0
+offset_bottom = 609.0
+color = Color(0.977823, 0.791493, 0.783036, 1)
+
+[node name="Button_JOGAR" type="Button" parent="."]
+offset_left = 324.0
+offset_top = 339.0
+offset_right = 465.0
+offset_bottom = 392.0
+text = "JOGAR"
+
+[node name="Dado00" type="Sprite2D" parent="."]
+position = Vector2(400, 130)
+texture = ExtResource("1_d83p5")
+
+[node name="Button_CASA" parent="." instance=ExtResource("2_400u2")]
+offset_left = 676.0
+offset_top = 6.0
+offset_right = 793.0
+offset_bottom = 121.0
+
+[node name="Label_NUM" type="Label" parent="."]
+offset_left = 330.0
+offset_top = 230.0
+offset_right = 455.0
+offset_bottom = 340.0
+text = "0"
+label_settings = SubResource("LabelSettings_pgoej")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_RESULTADO" type="Label" parent="."]
+offset_left = 334.0
+offset_top = 479.0
+offset_right = 459.0
+offset_bottom = 589.0
+text = "0"
+label_settings = SubResource("LabelSettings_pgoej")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressBar" parent="." instance=ExtResource("3_xy5ap")]
+offset_left = 342.0
+offset_top = 414.0
+offset_right = 443.0
+offset_bottom = 475.0
+
+[node name="Button_MENOS" type="Button" parent="."]
+offset_left = 251.0
+offset_top = 260.0
+offset_right = 317.0
+offset_bottom = 315.0
+text = "-"
+
+[node name="Button_MAIS" type="Button" parent="."]
+offset_left = 465.0
+offset_top = 259.0
+offset_right = 531.0
+offset_bottom = 314.0
+text = "+"
+
+[connection signal="pressed" from="Button_JOGAR" to="." method="_on_button_jogar_pressed"]
+[connection signal="pressed" from="Button_MENOS" to="." method="_on_button_menos_pressed"]
+[connection signal="pressed" from="Button_MAIS" to="." method="_on_button_mais_pressed"]
